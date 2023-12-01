@@ -119,9 +119,9 @@ static List<Mesa> GetMesas()
 {
     return new List<Mesa>()
     {
-        new Mesa(1, "Ocupada", 0, 0, new List<string>() ),
-        new Mesa(2, "Ocupada", 0, 0, new List<string>() ),
-        new Mesa(3, "Ocupada", 0, 0, new List<string>() ),
+        new Mesa(1, "Vacia", 0, 0, new List<string>() ),
+        new Mesa(2, "Vacia", 0, 0, new List<string>() ),
+        new Mesa(3, "Vacia", 0, 0, new List<string>() ),
         new Mesa(4, "Vacia", 0, 0, new List<string>() ),
         new Mesa(5, "Vacia", 0, 0, new List<string>() ),
         new Mesa(6, "Vacia", 0, 0, new List<string>() )
@@ -179,8 +179,14 @@ static void CerrarMesa(List<Mesa> listMesas)
     int selecMesa;
     Console.WriteLine("¿Que mesa va a cerrar?");
     selecMesa = (int.Parse(Console.ReadLine()) - 1);
-    listMesas[selecMesa].Disponibilidad = "Vacia";
     Console.WriteLine($"La cuenta total de esta mesa es: ${listMesas[selecMesa].CuentaTotal}");
+    listMesas[selecMesa].Disponibilidad = "Vacia";
+    listMesas[selecMesa].Time = 0;
+    listMesas[selecMesa].CuentaTotal = 0;
+    foreach (var item in listMesas)
+    {
+        listMesas[selecMesa].Pedido.Clear();
+    }
 }
 
 static void VerEstadoMesas(List<Mesa> listMesas)
