@@ -57,19 +57,15 @@ try
             case 1:
                 reservarMesa(listMesas);
                 break;
-
             case 2:
                 SumarPedido(listaMenu, listMesas);
                 break;
-
             case 3:
                 CerrarMesa(listMesas);
                 break;
-
             case 4:
                 VerEstadoMesas(listMesas);
                 break;
-
             case 5:
                 ListaMenu(listaMenu);
                 break;
@@ -95,8 +91,6 @@ finally
 {
     Console.WriteLine("esto es el finally. Listo");
 }
-
-
 
 
 static List<Menu> GetMenu()
